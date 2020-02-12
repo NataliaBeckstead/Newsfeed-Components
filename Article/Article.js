@@ -103,6 +103,36 @@ const data = [
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
+*/
+
+function news (title, date, firstParagraph, secondParagraph, thirdParagraph) {
+  const article = document.createElement('div');
+  const arttitle = document.createElement('h2');
+  const artdate = document.createElement('p');
+  const par1 = document.createElement('p');
+  const par2 = document.createElement('p');
+  const par3 = document.createElement('p');
+  const expand = document.createElement('span');
+
+  article.appendChild(arttitle);
+  article.appendChild(artdate);
+  article.appendChild(par1);
+  article.appendChild(par2);
+  article.appendChild(par3);
+  article.appendChild(expand);
+
+  article.classList.add('article');
+  artdate.classList.add('date');
+  expand.classList.add('expandButton');
+
+  article.addEventListener('click', event => {
+    article.classList.toggle('article-open');
+  });
+
+  return article;
+}
+
+/*
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
